@@ -1,0 +1,24 @@
+  <!-- Visualizza caricatore se la variabile isLoading è a TRUE -->
+<!-- <div class="card m-auto" style="width: 18rem; height: 500;" *ngIf="isLoading">
+      <div class="col-3 mt-5">
+        <div class="d-flex justify-content-center mt-5" style="width: 18rem; height: 411px;">
+          <div class="spinner-grow text-primary mt-5" role="status">
+          </div>
+        </div>
+      </div>
+</div> -->
+
+<!-- Visualizza caricatore se la variabile isLoading è a TRUE -->
+<div class="card m-auto" style="width: 18rem;">
+    <img [src]="utente?.avatar" class="card-img-top" alt="...">
+    <div class="card-body">
+      <span class="badge"
+      [ngStyle]="{'background-color' : impostazioni.impostazioni.coloreTema}">ID: {{utente?.id}}</span>
+      <h3 class="card-title mt-3 mb-0">{{utente?.last_name}}</h3>
+      <h5 class="mb-3">{{utente?.first_name}}</h5>
+      <p>{{utente?.email}}</p>
+      <a href="#" class="btn"
+      [ngStyle]="{'background-color' : impostazioni.impostazioni.coloreTema}"
+      (click)="utentiService.aggiungiAmico(utente!)" style="color: white">Aggiungi agli amici</a>
+    </div>
+</div>

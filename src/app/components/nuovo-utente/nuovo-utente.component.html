@@ -1,0 +1,32 @@
+<h2>Inserisci un nuovo utente</h2>
+<hr>
+
+<form class="col-12 mb-3 mb-sm-0" #creaUtenteForm="ngForm" (ngSubmit)="creaUtente()">
+    <div class="row input-group">
+        <div class="col-4">
+            <input
+            [ngClass]="{'is-invalid': nomeF.dirty && nomeF.invalid }"
+            #nomeF="ngModel" [(ngModel)]="nomeForm"
+            name="nomeForm" class="form-control"
+            placeholder="Nome"
+            required >
+        </div>
+
+        <div class="col-4">
+            <select class="form-select" [(ngModel)]="lavoroForm" name="lavoro" required>
+                <option selected>Scegli la professione...</option>
+                <option value="Manger">Manger</option>
+                <option value="Caporeparto">Caporeparto</option>
+                <option value="Impiegato">Impiegato</option>
+                <option value="Operaio">Operaio</option>
+              </select>
+        </div>
+
+    </div>
+    <button [disabled]="creaUtenteForm.invalid" class="btn btn-secondary mt-5" type="submit">Cerca</button>
+  </form>
+
+
+
+
+

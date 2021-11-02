@@ -1,0 +1,23 @@
+<h2>Amici</h2>
+<hr>
+
+
+<div class="row mt-4">
+    <div *ngFor="let utente of utentiService.amici">
+        <div class="col-3 mb-5">
+            <div class="card m-auto" style="width: 18rem;">
+                <img [src]="utente?.avatar" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <span class="badge"
+                    [ngStyle]="{'background-color' : impostazioni.impostazioni.coloreTema}">ID: {{utente?.id}}</span>
+                    <h3 class="card-title mt-3 mb-0">{{utente?.last_name}}</h3>
+                    <h5 class="mb-3">{{utente?.first_name}}</h5>
+                    <p>{{utente?.email}}</p>
+                    <a href="#" class="btn"
+                    [ngStyle]="{'background-color' : impostazioni.impostazioni.coloreTema}"
+                    (click)="utentiService.aggiungiAmico(utente!)" style="color: white">Aggiungi agli amici</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
